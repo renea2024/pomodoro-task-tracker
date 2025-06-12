@@ -1,0 +1,391 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fff5e6;
+
+  color: #7e6651;
+  line-height: 1.5;
+  max-width: 960px;
+  margin: 0 auto;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+main {
+  max-width: 960px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  font-size: 48px;
+  font-weight: 700;
+  background-color: #ffc1a6;
+  border: 2px solid #ff6e40;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(126, 102, 81, 0.2);
+  text-align: center;
+  color: #ff6e40;
+  transition: background-color 0.5s ease, border-color 0.5s ease,
+    color 0.5s ease;
+}
+
+/* Pomodoro container */
+.pomodoro {
+  background-color: #fff5e6;
+  border: 2px solid #ff6e40;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px rgba(126, 102, 81, 0.1);
+  min-height: 300px;
+  color: #7e6651;
+  transition: background-color 0.5s ease, border-color 0.5s ease,
+    color 0.5s ease;
+}
+
+/* Pomodoro header */
+.pomodoro-header {
+  position: relative;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pomodoro-header h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ff6e40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+/* Help icon */
+.help-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background-color: #ffc1a6;
+  color: #7e6651;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(126, 102, 81, 0.1);
+  user-select: none;
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Timer and Button Wrapper */
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timer */
+.timer {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff6e40;
+  margin-bottom: 1rem;
+  transition: color 0.5s ease;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+button.pomo-btn {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  min-width: 160px;
+  border-radius: 12px;
+  margin: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(126, 102, 81, 0.1);
+  transition: background-color 0.5s ease, transform 0.1s ease,
+    box-shadow 0.5s ease, color 0.5s ease;
+}
+
+button.start {
+  background-color: #ffc300;
+  color: #7e6651;
+}
+
+button.pause {
+  background-color: #ffc1a6;
+  color: #7e6651;
+}
+
+button.reset {
+  background-color: #ff6e40;
+  color: #fff5e6;
+}
+
+/* Task Board */
+.task-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Task Columns */
+.to-do,
+.in-progress,
+.complete {
+  background-color: #fff5e6;
+  border: 2px solid #ff6e40;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(126, 102, 81, 0.15);
+  min-height: 300px;
+  color: #7e6651;
+  transition: background-color 0.5s ease, border-color 0.5s ease,
+    color 0.5s ease;
+}
+
+.to-do h3,
+.in-progress h3,
+.complete h3 {
+  margin-bottom: 1rem;
+  color: #ff6e40;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: color 0.5s ease;
+}
+
+/* To Do Input */
+.task-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.task-input button {
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  background-color: #ffc300;
+  color: #7e6651;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.task-input button:hover {
+  background-color: #ffb000;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.task-list li {
+  background-color: #fff5e6;
+  border: 1px solid #ff6e40;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  transition: background-color 0.5s ease, border-color 0.5s ease,
+    color 0.5s ease;
+}
+
+.task-list li button {
+  background: none;
+  border: none;
+  color: #ff6e40;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+/* Modal */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fff5e6;
+  border: 2px solid #ff6e40;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 400px;
+  margin: 15% auto;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(126, 102, 81, 0.3);
+  color: #7e6651;
+  z-index: 1001;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6e40;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .task-board {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==== BREAK MODE (Blue Palette) ==== */
+body.break-mode {
+  background-color: #d0e7ff;
+  color: #1a3b60;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.break-mode header {
+  background-color: #a3c0ff;
+  border-color: #7299ff;
+  color: #1a3b60;
+}
+
+body.break-mode .pomodoro {
+  background-color: #c8dbff;
+  border-color: #7299ff;
+  color: #1a3b60;
+}
+
+body.break-mode .pomodoro-header h2 {
+  color: #3b5998;
+}
+
+body.break-mode .help-icon {
+  background-color: #85aaff;
+  color: #1a3b60;
+  box-shadow: none;
+}
+
+body.break-mode .timer {
+  color: #1a3b60;
+}
+
+body.break-mode button.start {
+  background-color: #7299ff;
+  color: #e0e8ff;
+}
+
+body.break-mode button.pause {
+  background-color: #a3c0ff;
+  color: #1a3b60;
+}
+
+body.break-mode button.reset {
+  background-color: #3b5998;
+  color: #e0e8ff;
+}
+
+body.break-mode .to-do,
+body.break-mode .in-progress,
+body.break-mode .complete {
+  background-color: #c8dbff;
+  border-color: #7299ff;
+  color: #1a3b60;
+}
+
+body.break-mode .to-do h3,
+body.break-mode .in-progress h3,
+body.break-mode .complete h3 {
+  color: #3b5998;
+}
+
+body.break-mode .task-input input {
+  background-color: #d9e8ff;
+  color: #1a3b60;
+  border: 1px solid #7299ff;
+}
+
+body.break-mode .task-input button {
+  background-color: #7299ff;
+  color: #e0e8ff;
+}
+
+body.break-mode .task-input button:hover {
+  background-color: #567de5;
+}
+
+body.break-mode .task-list li {
+  background-color: #d9e8ff;
+  border-color: #567de5;
+  color: #1a3b60;
+}
+
+body.break-mode .task-list li button {
+  color: #3b5998;
+}
+
+body.break-mode .modal-content {
+  background-color: #d9e8ff;
+  color: #1a3b60;
+  border-color: #7299ff;
+  box-shadow: none;
+}
+
+body.break-mode .close {
+  color: #1a3b60;
+}
+body.break-mode .task-board {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.7;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+}
+.break-indicator {
+  font-size: 3rem;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pomo.Pop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- App Title -->
+    <header class="title">Pomo.Pop</header>
+
+    <!-- Pomodoro Section -->
+    <section class="pomodoro">
+      <div class="pomodoro-header">
+        <h2>
+          Pomodoro Timer
+          <span class="help-icon" id="openHelp">?</span>
+        </h2>
+      </div>
+      <!-- Help Modal -->
+      <div id="helpModal" class="modal-overlay">
+        <div class="modal-content">
+          <span class="close" id="closeHelp">&times;</span>
+          <h2>How to Use Pomo.Pop</h2>
+          <p>
+            <strong>Pomo.Pop</strong> is based on the Pomodoro Technique: 25
+            minutes of focused work followed by a 5-minute break to help you
+            stay productive and refreshed.
+          </p>
+          <ol>
+            <li>
+              <strong>To Do:</strong> Click the <strong>+</strong> button to add
+              new tasks. Click the ▶ icon to move a task to In Progress and
+              automatically start the 25-minute timer.
+            </li>
+            <li>
+              <strong>In Progress:</strong> Work on one task at a time. When
+              you're done, click the ✔ icon to move it to the Complete column.
+              This triggers Break Mode automatically.
+            </li>
+            <li>
+              <strong>Complete:</strong> Your completed tasks live here. The
+              timer will resume focus mode after the five minute break.
+            </li>
+            <li>
+              <strong>Break Mode:</strong> While on break, the task board is
+              blurred and task adding is disabled. Once the timer ends, focus
+              mode resumes.
+            </li>
+          </ol>
+          <p><em>Organize, focus, and pop through your day.</em></p>
+        </div>
+      </div>
+
+      <div class="timer-wrapper">
+        <div id="break-indicator"></div>
+        <div class="timer">
+          <h3 id="timer">25:00</h3>
+        </div>
+        <div class="button-group">
+          <button id="pausebtn" class="pomo-btn pause">Pause</button>
+          <button id="resetbtn" class="pomo-btn reset">Reset</button>
+          <button id="breakbtn" class="pomo-btn break">Break</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task Board -->
+    <main class="task-board">
+      <section class="to-do">
+        <h3>To Do</h3>
+        <div class="task-input">
+          <input type="text" id="new-task" placeholder="Add new task..." />
+          <button id="add-task-btn">+</button>
+        </div>
+        <ul id="todo-list" class="task-list"></ul>
+      </section>
+
+      <section class="in-progress">
+        <h3>In Progress</h3>
+        <ul id="in-progress-list" class="task-list"></ul>
+      </section>
+
+      <section class="complete">
+        <h3>Complete</h3>
+        <ul id="complete-list" class="task-list"></ul>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

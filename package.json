@@ -1,0 +1,44 @@
+ timerDuration = 25 * 60;
+let timeLeft = timerDuration;
+let timerInterval = null;
+let isRunning = false;
+
+function updateTimerDisplay() {
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+  let display = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  document.getElementById('timer').textContent = display;
+}
+
+function startTimer() {
+  if (isRunning) return;
+  isRunning = true;
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      isRunning = false;
+      alert('Time’s up!');
+    }
+  }, 1000);
+}let
+
+function pauseTimer() {
+  if (!isRunning) return;
+  clearInterval(timerInterval);
+  isRunning = false;
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  isRunning = false;
+  timeLeft = timerDuration;
+  updateTimerDisplay();
+}
+
+document.getElementById('startbtn').addEventListener('click', startTimer);
+document.getElementById('pausebtn').addEventListener('click', pauseTimer);
+document.getElementById('resetbtn').addEventListener('click', resetTimer);
+
+updateTimerDisplay();
